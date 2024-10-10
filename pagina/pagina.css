@@ -1,0 +1,19 @@
+html,
+body,
+main{
+    background-color:#414073;
+}
+
+.titulo{
+    text-align: center;
+    color: white;
+}
+
+.button{
+    color:antiquewhite;
+    text-align: center;
+}
+.button button{
+color: black;
+border-radius: 8px;
+}
