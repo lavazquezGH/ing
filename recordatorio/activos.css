@@ -26,21 +26,20 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-
+/* Barra de recordatorio activo con Titulo - Fecha - Hora*/
 li {
     background-color: #ffffff; /* Color de fondo del elemento de lista */
-    padding: 10px; /* Espaciado interno */
+    padding: 10px;
     margin: 5px 0px; /* Margen entre elementos de la lista */
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px;
     display: flex; /* Usar flexbox para el contenido */
     justify-content: space-between; /* Espaciado entre el contenido */
-    align-items: center; /* Alinear elementos en el centro */
+    align-items: center;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
 }
-
 li:hover {
-    background-color:  #e0e0e0; /* Color de fondo al pasar el mouse */
+    background-color:  #e0e0e0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
 }
 
@@ -48,6 +47,7 @@ li span {
     font-weight: bold; /* Hacer el texto en negrita */
 }
 
+/*Botón "Volver a agregar recordatorios"*/
 .btnBack {
     padding: 10px;
     background-color: #28a745; /* Color inicial */
@@ -63,6 +63,7 @@ li span {
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
+/* Botones de editar(Lapiz y Cesto de basura)*/
 .button-group {
     display: flex; /* Usar flexbox para los botones */
     gap: 5px; /* Espacio entre los botones */
@@ -81,23 +82,23 @@ li span {
 }
 
 .editBtn {
-    background-color: #ffdd59; /* Color de fondo para el botón de editar */
-    color: white; /* Color del texto */
+    background-color: #ffdd59;
+    color: white;
 }
-
 .editBtn:hover {
-    background-color: #ffd32a; /* Color de fondo al pasar el mouse */
+    background-color: #ffd32a; 
 }
 
 .deleteBtn {
-    background-color: #c82333; /* Color de fondo para el botón de eliminar */
-    color: white; /* Color del texto */
+    background-color: #c82333; 
+    color: white;
 }
-
 .deleteBtn:hover {
-    background-color: #c82333; /* Color de fondo al pasar el mouse */
+    background-color: #c82333;
 }
 
+
+/* Ventana para editar recordatorios*/
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -133,7 +134,7 @@ li span {
 .modalContent input {
     margin-bottom: 15px; /* Espacio entre los campos de entrada */
     padding: 10px; /* Espaciado interno para los inputs */
-    border-radius: 5px; /* Bordes redondeados para los inputs */
+    border-radius: 5px;
     border: 1px solid #ccc; /* Color de borde */
     width: calc(100% - 22px); /* Ancho total menos el padding */
     box-sizing: border-box; /* Incluir el padding y borde en el ancho total */
@@ -141,10 +142,10 @@ li span {
 
 .modalContent button {
     padding: 10px 15px; /* Espaciado interno para el botón */
-    background-color: #28a745; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados para el botón */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer; /* Cambiar el cursor al pasar el ratón */
     transition: background-color 0.3s ease; /* Transición para el color de fondo */
 }

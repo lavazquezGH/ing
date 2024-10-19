@@ -4,76 +4,88 @@ document.getElementById('reminderForm').addEventListener('submit', function(e) {
     
     // Obtiene los valores ingresados en el formulario
     const title = document.getElementById('title').value;
+
     if (title.length > 25) {
         alert("El título no puede exceder los 25 caracteres.");
-        e.preventDefault();} // Evita que el formulario se envíe
-    ///
+        e.preventDefault(); // Evita que el formulario se envíe si hay un error
+    }
+
+    // Obtiene la fecha y la hora ingresadas en el formulario
     const date = document.getElementById('date').value;
     const hour = document.getElementById('time').value;
 
-    // Crear el objeto de recordatorio
+    // Crea un objeto de recordatorio con los datos del formulario
     const reminder = { title, date, hour };
 
-    // Obtener los recordatorios existentes de localStorage
+    // Obtiene los recordatorios existentes de localStorage o crea un arreglo vacío si no hay ninguno
     let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
 
-    // Añadir el nuevo recordatorio
+    // Añade el nuevo recordatorio al arreglo de recordatorios
     reminders.push(reminder);
 
-    // Guardar los recordatorios actualizados en localStorage
+    // Guarda los recordatorios actualizados en localStorage
     localStorage.setItem('reminders', JSON.stringify(reminders));
 
-    // Mostrar los recordatorios guardados en la consola para depuración
-    console.log('Recordatorios guardados:', reminders);
+    // Muestra los recordatorios guardados en la consola (para probar codigo)
+    //console.log('Recordatorios guardados:', reminders);
 
-    // Redirigir a la página de visualización de recordatorios activos
     window.location.href = 'activos.html';
 });
 
-// Evento para inicializar la eliminación periódica de recordatorios expirados
+// Evento que inicializa la eliminación periódica de recordatorios expirados cuando la página se carga
 document.addEventListener('DOMContentLoaded', () => {
     const backBtn = document.getElementById('backBtn');
+
     if (backBtn) {
         backBtn.addEventListener('click', () => {
-            window.location.href = 'recordatorio.html'; // Redirigir a la página de agregar
+            window.location.href = 'recordatorio.html'; // Redirige a la página de agregar recordatorios
         });
     }
-
-    setInterval(removeExpiredReminders, 1000 * 60); // Ejecuta la limpieza cada minuto
+    // Ejecuta la limpieza de recordatorios expirados cada minuto
+    setInterval(removeExpiredReminders, 1000 * 60);
 });
 
-// Función para mostrar recordatorios activos
+// Función para cargar los recordatorios activos en la página
 function loadReminders() {
-    displayReminders();
+    displayReminders(); // Llama a la función para mostrar los recordatorios en la interfaz
 }
 
-// Mostrar los recordatorios en la interfaz
+// Muestra los recordatorios almacenados en la interfaz de usuario
 function displayReminders() {
-    const reminderList = document.getElementById('reminderList');
-    reminderList.innerHTML = ''; // Limpiar la lista
 
+    const reminderList = document.getElementById('reminderList');
+    reminderList.innerHTML = ''; // Limpia la lista antes de mostrar los recordatorios
+
+    // Obtiene los recordatorios del localStorage o un arreglo vacío si no hay ninguno
     let reminders = localStorage.getItem('reminders') ? JSON.parse(localStorage.getItem('reminders')) : [];
 
+    // Itera sobre cada recordatorio y lo añade a la lista
     reminders.forEach(reminder => { 
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${reminder.title}</span>
             <span>${reminder.date} ${reminder.hour}</span>
         `;
-        reminderList.appendChild(li);
+        reminderList.appendChild(li); // Añade el recordatorio a la lista en la interfaz
     });
 }
 
-// Función para eliminar recordatorios expirados
+// Función que elimina los recordatorios que ya han expirado
 function removeExpiredReminders() {
-    let reminders = localStorage.getItem('reminders') ? JSON.parse(localStorage.getItem('reminders')) : [];
-    const now = new Date();
 
+    // Obtiene los recordatorios del localStorage o un arreglo vacío si no hay ninguno
+    let reminders = localStorage.getItem('reminders') ? JSON.parse(localStorage.getItem('reminders')) : [];
+    const now = new Date(); // Obtiene la fecha y hora actual
+
+    // Filtra los recordatorios, dejando solo aquellos que no han expirado
     reminders = reminders.filter(reminder => {
         const reminderDateTime = new Date(`${reminder.date}T${reminder.hour}:00`);
-        return reminderDateTime > now;
+        return reminderDateTime > now; // Mantiene solo los recordatorios futuros
     });
 
-    localStorage.setItem('reminders', JSON.stringify(reminders)); // Actualizar localStorage
-    displayReminders(); // Actualizar la lista de recordatorios en la interfaz
+    // Actualiza los recordatorios en localStorage
+    localStorage.setItem('reminders', JSON.stringify(reminders));
+
+    // Actualiza la lista de recordatorios en la interfaz
+    displayReminders();
 }

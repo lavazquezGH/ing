@@ -1,33 +1,36 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #b8e994;
-    height: 100vh;
+    height: 100vh; /* Altura completa de la ventana */
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
 }
 
 .container {
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+    padding: 20px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+    width: 100%; /* Ancho completo */
+    max-width: 500px; /* Ancho máximo del contenedor */
     text-align: center;
 }
+
 
 h1, h2 {
-    text-align: center;
+    text-align: center; /* Centrar el texto de los encabezados */
 }
 
+/* Estilo del formulario */
 form {
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; /* Espacio entre los elementos */
 }
 
+/* Campos de entrada */
 input {
     padding: 10px;
     font-size: 16px;
@@ -35,33 +38,33 @@ input {
     border-radius: 7px;
 }
 
+/* Botón "agregar recordatorios" */
 .btnAddReminder {
     padding: 10px;
     background-color: #28a745; /* Color inicial */
     color: white;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadido para transición */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
-
 .btnAddReminder:hover {
-    background-color: #218838; /* Color al pasar el ratón */
+    background-color: #218838; /* Color al pasar el cursor */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
+/* Botón "ver recordatorios" */
 .btnViewReminders {
     padding: 10px;
-    background-color: #28a745; /* Color inicial */
+    background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadido para transición */
-    width: 300px;
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para el color y tamaño */
+    width: 300px; 
 }
-
 .btnViewReminders:hover {
-    background-color: #218838; /* Color al pasar el ratón */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    background-color: #218838;
+    transform: scale(1.05);
 }
