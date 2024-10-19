@@ -11,25 +11,24 @@
         <h1>Agregar Recordatorio</h1>
 
         <form id="reminderForm">
-            <label for="title">Título del recordatorio:</label>
-            <input type="text" id="title" required>
+            <label for="title">Título</label>
+            <input type="text" id="title" required maxlength="25">
 
-            <label for="date">Fecha del recordatorio:</label>
+            <label for="date">Fecha</label>
             <input type="date" id="date" required>
 
-            <label for="time">Hora del recordatorio:</label>
+            <label for="time">Hora</label>
             <input type="time" id="time" required>
 
-            <button type="submit" class="btn">Agregar</button>
+            <button type="submit" class="btnAddReminder">Agregar</button>
         </form>
-
-        <button onclick="window.location.href='activos.html';" id="viewReminders" class="btn">Ver Recordatorios
+        <br>
+        <button onclick="window.location.href='activos.html';" id="viewReminders" class="btnViewReminders">Ver Recordatorios
 
         </button>
     </div>
 
-
     <script src="recordatorio.js"></script>
-    <script src= "activos.js"></script>
+    <script src="activos.js"></script>
 </body>
 </html>

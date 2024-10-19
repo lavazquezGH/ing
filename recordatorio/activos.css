@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b8e994; /* Color principal */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff; /* Color de fondo del elemento de lista */
+    padding: 10px; /* Espaciado interno */
+    margin: 5px 0px; /* Margen entre elementos de la lista */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Usar flexbox para el contenido */
+    justify-content: space-between; /* Espaciado entre el contenido */
+    align-items: center; /* Alinear elementos en el centro */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+    background-color:  #e0e0e0; /* Color de fondo al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+
+li span {
+    font-weight: bold; /* Hacer el texto en negrita */
+}
+
+.btnBack {
+    padding: 10px;
+    background-color: #28a745; /* Color inicial */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el efecto de hover */
+}
+
+.btnBack:hover {
+    background-color: #218838; /* Color al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.button-group {
+    display: flex; /* Usar flexbox para los botones */
+    gap: 5px; /* Espacio entre los botones */
+}
+
+.editBtn, .deleteBtn {
+    display: inline-block; /* Asegura que estén uno al lado del otro */
+    padding: 5px 10px;
+    border: none;
+    background-color: white;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px; /* Ajusta el margen izquierdo para controlar el espacio */
+    margin-right: 0px; /* Margen derecho */
+}
+
+.editBtn {
+    background-color: #ffdd59; /* Color de fondo para el botón de editar */
+    color: white; /* Color del texto */
+}
+
+.editBtn:hover {
+    background-color: #ffd32a; /* Color de fondo al pasar el mouse */
+}
+
+.deleteBtn {
+    background-color: #c82333; /* Color de fondo para el botón de eliminar */
+    color: white; /* Color del texto */
+}
+
+.deleteBtn:hover {
+    background-color: #c82333; /* Color de fondo al pasar el mouse */
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1; /* Encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con opacidad */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.modalContent {
+    background-color: #fefefe;
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%; /* Ancho del modal */
+    max-width: 400px; /* Ancho máximo para el modal */
+    text-align: center;
+}
+
+.modalContent h2 {
+    margin-bottom: 20px; /* Espacio entre el título y los campos de entrada */
+}
+
+.modalContent label {
+    display: block; /* Asegura que cada etiqueta esté en una nueva línea */
+    margin: 10px 0 5px; /* Margen para la etiqueta */
+}
+
+.modalContent input {
+    margin-bottom: 15px; /* Espacio entre los campos de entrada */
+    padding: 10px; /* Espaciado interno para los inputs */
+    border-radius: 5px; /* Bordes redondeados para los inputs */
+    border: 1px solid #ccc; /* Color de borde */
+    width: calc(100% - 22px); /* Ancho total menos el padding */
+    box-sizing: border-box; /* Incluir el padding y borde en el ancho total */
+}
+
+.modalContent button {
+    padding: 10px 15px; /* Espaciado interno para el botón */
+    background-color: #28a745; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+}
+
+.modalContent button:hover {
+    background-color: #218838; /* Color al pasar el ratón */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

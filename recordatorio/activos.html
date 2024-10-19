@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorios Activos</title>
+    <link rel="stylesheet" href="activos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recordatorios Activos</h1>
+        <ul id="reminderList"></ul>
+        <button id="backBtn" class="btnBack">Volver a Agregar Recordatorios</button>
+    </div>
+
+    
+    <!-- Modal para editar recordatorio -->
+    <div id="editModal" class="modal">
+        <div class="modalContent">
+            <span class="close">&times;</span>
+            <h2>Editar Recordatorio</h2>
+            <form id="editReminderForm">
+                <label for="editTitle">Título</label>
+                <input type="text" id="editTitle" required maxlength="25">
+                <br>
+                <label for="editDate">Fecha</label>
+                <input type="date" id="editDate" required>
+                <label for="editTime">Hora</label>
+                <input type="time" id="editTime" required>
+                <br>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>    
+
+
+    <script src="recordatorio.js"></script>
+    <script src="activos.js"></script>
+</body>
+</html>
